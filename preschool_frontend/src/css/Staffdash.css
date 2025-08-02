@@ -1,0 +1,29 @@
+.s-dash-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 1000px;
+    margin-top: 30px;
+    background-color: yellowgreen;
+    justify-content: left;
+    align-items: baseline;
+    position: absolute;
+    padding: 15px 20px ;
+    
+}
+.s-tab{
+    border: none;
+    background-color: yellowgreen;
+    font-size: 15px;
+    padding: 10px 50px ;
+}
+.s-tab:hover{
+    background-color: red;
+    color: white;
+}
+.dash-name{
+    font-size: 20px;
+    color: navy;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}

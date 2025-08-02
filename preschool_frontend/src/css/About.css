@@ -1,0 +1,140 @@
+body {
+    padding-top: 40px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6ef;
+}
+
+/* About section container */
+.about {
+    background-color: antiquewhite;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+/* Purpose section */
+.purpose {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.mission, .vision {
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mission {
+    background-color: palevioletred;
+}
+
+.vision {
+    background-color: pink;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(167, 13, 13);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.purex {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Staff section */
+.staff_topic {
+    font-size: 2.5rem;
+    color: cadetblue;
+    margin-left: 60px;
+    margin-top: 40px;
+}
+
+/* Staff grid layout */
+.staff {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin: 30px 50px;
+}
+
+.staff_part {
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staff_part:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.staff_part label {
+    display: block;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Staff image style */
+.pic {
+    height: 240px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+/* Tablet view */
+@media (max-width: 900px) {
+    .purpose {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .staff {
+        margin: 20px;
+    }
+
+    .staff_topic {
+        font-size: 2rem;
+        margin-left: 30px;
+    }
+
+    .pic {
+        height: 200px;
+        width: 170px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    .purex {
+        font-size: 1rem;
+    }
+
+    .staff_part {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .staff_topic {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+
+    .pic {
+        height: 180px;
+        width: 150px;
+    }
+}

@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Section */
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(195, 136, 168);
+  border-bottom: 1px solid rgb(13, 11, 77);
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.left_nav label {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-container {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-container li {
+  position: relative;
+}
+
+.navbar-container a {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(33, 33, 106);
+  text-transform: uppercase;
+}
+
+.navbar-container a:hover {
+  background-color: brown;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Dropdowns */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 150px;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.dropdown a {
+  color: white;
+  padding: 10px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #666;
+}
+
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* Background Section */
+.home-container {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px 40px;
+  border-radius: 20px;
+  max-width: 90%;
+}
+
+.wlcm {
+  font-size: 3vw;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.purpose {
+  font-size: 1.5vw;
+  margin-bottom: 30px;
+}
+
+.cource-btn {
+  padding: 12px 25px;
+  background-color: #ffcc00;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cource-btn:hover {
+  background-color: #614204;
+  color: #ecda94;
+}
+
+
+/* -----------------------
+   Media Queries
+------------------------ */
+
+/* Tablet view */
+@media (max-width: 900px) {
+  .wlcm {
+    font-size: 28px;
+  }
+
+  .purpose {
+    font-size: 18px;
+  }
+
+  .welcome-section {
+    padding: 20px;
+  }
+
+  .navbar-container a {
+    width: 120px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .wlcm {
+    font-size: 24px;
+  }
+
+  .purpose {
+    font-size: 16px;
+  }
+
+  .cource-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .home-container {
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-container a {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+  }
+}

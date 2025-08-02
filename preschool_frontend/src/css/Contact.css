@@ -1,0 +1,140 @@
+.contct-topic {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+  color: darkgreen;
+}
+
+.cntct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 20px 80px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.icon {
+  height: 60px;
+  width: 60px;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.contact_form {
+  text-align: center;
+  background-color: rgb(197, 44, 126);
+  border-radius: 25px;
+  padding: 40px 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.text, .text_con {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.text_con {
+  height: 100px;
+}
+
+.con_btn {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  background-color: rgb(213, 216, 29);
+  color: rgb(16, 79, 28);
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.con_btn:hover {
+  background-color: antiquewhite;
+  color: red;
+}
+
+.tpc {
+  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bkgrd {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.con-item {
+  background-color: rgb(139, 36, 157);
+  padding: 15px;
+  color: aliceblue;
+  border-style: double;
+  border-width: 10px;
+  border-color: white;
+  width: 250px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* ✅ Responsive styles */
+@media (max-width: 768px) {
+  .contct-topic {
+    font-size: 30px;
+  }
+
+  .cntct {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .con-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .text, .text_con {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contct-topic {
+    font-size: 26px;
+  }
+
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  .tpc {
+    font-size: 20px;
+  }
+
+  .contact_form {
+    padding: 30px 10px;
+  }
+
+  .con_btn {
+    width: 100%;
+  }
+}

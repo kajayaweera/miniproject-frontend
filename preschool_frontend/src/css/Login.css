@@ -1,0 +1,78 @@
+
+.loging_background {
+  background: linear-gradient(to right, #f06, #a1c4fd);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.loging_body {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.topic_login {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #bd1e1e;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.input_field {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input_field:focus {
+  border-color: #4e6ef1;
+}
+
+
+.login_btn {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.login_btn button {
+  background-color: #1916d3;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login_btn button:hover {
+  background-color: #ca253d;
+}
+.forgot{
+  list-style: none;
+  margin-left: 270px;
+  
+}
+
