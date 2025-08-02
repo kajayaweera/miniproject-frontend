@@ -9,7 +9,7 @@ function Admindashboard(){
                 <button className='a-tab'>Child Profile</button><br/>
                 <button className='a-tab'>Timetable</button><br/>
                 <button className='a-tab'>Activities</button><br/>
-                <button className='a-tab'>Digital Reports</button><br/>
+                <button className='a-tab'>Digital Report</button><br/>
                 <button className='a-tab'> Updates</button><br/>
                 <button className='a-tab'>Special Noties</button><br/>
                 <button className='a-tab'>Billing</button><br/>
