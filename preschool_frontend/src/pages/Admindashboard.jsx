@@ -14,7 +14,7 @@ function Admindashboard(){
                 <button className='a-tab'>Special Noties</button><br/>
                 <button className='a-tab'>Billing</button><br/>
                 <button className='a-tab'>See My Child</button><br/>
-                <button className='a-tab'>Events</button><br/>
+                <button className='a-tab'>Event</button><br/>
                 <button className='a-tab'>Gallery</button><br/>
                 <button className='a-tab'>Log Out</button><br/>
 
