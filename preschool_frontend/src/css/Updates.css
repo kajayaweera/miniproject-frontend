@@ -1,0 +1,408 @@
+
+.updates-container {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff 0%, #ffe4f0 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Header Section --- */
+.updates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ffc2dd;
+}
+
+.updates-title {
+  color: #e91e63;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Button: Toggle Form */
+.btn-toggle-form {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.btn-toggle-form:hover {
+  background-color: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+}
+
+.btn-toggle-form:active {
+  transform: translateY(0);
+}
+
+
+
+.update-form-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.15);
+  border: 2px solid #ffc2dd;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.form-title {
+  color: #e91e63;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+/* Form Grid Layout */
+.update-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Form Group (Each Input Field) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-full {
+  grid-column: 1 / -1; /* Spans full width */
+}
+
+/* Labels */
+.form-group label {
+  color: #e91e63;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 2px solid #ffc2dd;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e91e63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form Actions (Buttons at Bottom) */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Button: Cancel/Clear */
+.btn-cancel {
+  background-color: #fff;
+  color: #e91e63;
+  border: 2px solid #e91e63;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #fff0f6;
+  transform: translateY(-2px);
+}
+
+/* Button: Submit/Save */
+.btn-submit {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+.btn-submit:hover {
+  background-color: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+}
+
+
+
+.updates-list-section {
+  margin-top: 40px;
+}
+
+.section-title {
+  color: #e91e63;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.update-count {
+  color: #482ce2;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Updates Grid Layout */
+.updates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+
+
+.update-card {
+  background-color: #fff;
+  border: 2px solid #ffc2dd;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.1);
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.2);
+  border-color: #ff9ec4;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ffe4f0;
+}
+
+.student-name {
+  color: #e91e63;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Button: Delete */
+.btn-delete {
+  background-color: transparent;
+  border: none;
+  color: #e91e63;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  background-color: #ffe4f0;
+  color: #c2185b;
+  transform: rotate(90deg);
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Info Row (Each Data Field) */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.info-row-full {
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Info Label */
+.info-label {
+  color: #e91e63;
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 130px;
+}
+
+/* Info Value */
+.info-value {
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Info Description (for longer text) */
+.info-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 12px;
+  background-color: #fff0f6;
+  border-radius: 8px;
+  border-left: 3px solid #e91e63;
+}
+
+/* Attendance Badges */
+.badge-present {
+  background-color: #d4f8e8;
+  color: #00a86b;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-absent {
+  background-color: #ffe4e4;
+  color: #e53935;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-late {
+  background-color: #fff4e4;
+  color: #ff9800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ================================
+   EMPTY STATE
+   ================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px dashed #ffc2dd;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.empty-message {
+  color: #999;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.empty-hint {
+  color: #bbb;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .updates-container {
+    padding: 20px;
+  }
+
+  .updates-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .update-form {
+    grid-template-columns: 1fr;
+  }
+
+  .updates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .updates-title {
+    font-size: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .updates-container {
+    padding: 15px;
+  }
+
+  .updates-title {
+    font-size: 22px;
+  }
+
+  .btn-toggle-form {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
+}

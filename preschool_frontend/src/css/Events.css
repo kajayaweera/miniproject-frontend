@@ -1,0 +1,144 @@
+/* General container */
+.events-container {
+  background-color: #ffe6f2;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Title */
+.events-title {
+  font-size: 2rem;
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Add Event Form */
+.add-event-form {
+  background-color: #fff;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 25px;
+  width: 60%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+}
+
+.add-event-form h2 {
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.add-event-form input,
+.add-event-form textarea {
+  padding: 10px;
+  border: 1px solid #ffb6c1;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.add-event-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.add-btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: #d81b60;
+}
+
+/* Event List */
+.events-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 90%;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.2);
+  transition: transform 0.2s;
+  margin: 30px;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+}
+
+.event-card h3 {
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Staff-only buttons */
+.event-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background-color: #ff80ab;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #ff4081;
+}
+
+.delete-btn {
+  background-color: #ff1744;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d50000;
+}
+
+/* No events message */
+.no-events {
+  color: #e91e63;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}

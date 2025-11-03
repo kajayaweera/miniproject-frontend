@@ -1,0 +1,30 @@
+.live-container {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+
+.live-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+.live-video {
+  width: 80%;
+  max-width: 900px;
+  height: 70vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 182, 210, 0.5);
+  border: 2px solid #ff9dcf;
+}
+
+.live-note {
+  margin-top: 10px;
+  color: #555;
+  font-size: 15px;
+}

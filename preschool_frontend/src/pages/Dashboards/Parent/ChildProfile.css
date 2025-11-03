@@ -1,0 +1,71 @@
+.create-child-profile-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.create-child-profile-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff0f6;
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 6px 18px rgba(255, 105, 180, 0.12);
+}
+
+.create-child-title {
+  margin: 0 0 18px;
+  color: #ff4da6;
+  text-align: center;
+}
+
+.create-child-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.create-label {
+  font-weight: 600;
+  color: #c30f6f;
+  text-align: left;
+}
+
+.create-input,
+.create-file-input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ffcada;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.create-input:focus,
+.create-file-input:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 0 3px rgba(255, 77, 166, 0.06);
+}
+
+.create-submit-btn {
+  margin-top: 6px;
+  background: linear-gradient(90deg,#ff4da6,#ff2d95);
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create-loading {
+  padding: 20px;
+  text-align: center;
+  color: #ff4da6;
+}

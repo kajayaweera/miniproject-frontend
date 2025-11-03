@@ -1,0 +1,559 @@
+/* ========================================
+   Child Profile Styles - Pink & White Theme
+   ======================================== */
+
+/* Main wrapper - centers everything on page */
+.child-profile-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe0f0 0%, #fff5f9 100%);
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container - holds all profile content */
+.child-profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Header Section
+   ======================================== */
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  color: #d63384;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.1);
+}
+
+/* ========================================
+   Main Content Grid Layout
+   ======================================== */
+.profile-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ========================================
+   Left Column - Profile Card
+   ======================================== */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(214, 51, 132, 0.15);
+  text-align: center;
+  position: sticky;
+  top: 2rem;
+}
+
+.profile-photo-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffb3d9, #ff80bf);
+  padding: 5px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+  position: relative;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  border: 3px solid white;
+}
+
+/* Edit Photo Button */
+.edit-photo-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #ff80bf;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
+}
+
+.edit-photo-btn:hover {
+  background: #ffe0f0;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.4);
+}
+
+.edit-photo-btn:active {
+  transform: scale(0.95);
+}
+
+.child-name {
+  color: #d63384;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Info badges for grade and age */
+.child-basic-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.info-badge {
+  background: linear-gradient(135deg, #ffe0f0, #ffcce6);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  flex: 1;
+  max-width: 120px;
+}
+
+.badge-label {
+  display: block;
+  color: #9d4766;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.badge-value {
+  display: block;
+  color: #d63384;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Parent information */
+.parent-info {
+  background: #fff5f9;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  border-left: 4px solid #ff80bf;
+}
+
+.parent-label {
+  color: #9d4766;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.parent-name {
+  color: #d63384;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ========================================
+   Right Column - Details Wrapper
+   ======================================== */
+.profile-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========================================
+   Stats Grid Section
+   ======================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(214, 51, 132, 0.2);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffe0f0, #ffcce6);
+  border-radius: 12px;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-label {
+  color: #9d4766;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  color: #d63384;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ========================================
+   Detail Sections
+   ======================================== */
+.detail-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.1);
+}
+
+.section-title {
+  color: #d63384;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #ffe0f0;
+}
+
+.detail-card {
+  background: #fff5f9;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #ff80bf;
+}
+
+.detail-text {
+  color: #6c3550;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   Activities Section
+   ======================================== */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.activity-chip {
+  background: linear-gradient(135deg, #ffe0f0, #ffcce6);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  color: #d63384;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(214, 51, 132, 0.1);
+}
+
+.activity-chip:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+}
+
+.activity-icon {
+  font-size: 1.2rem;
+}
+
+/* ========================================
+   Photo Edit Modal
+   ======================================== */
+
+/* Modal overlay - covers entire screen */
+.photo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal box */
+.photo-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 40px rgba(214, 51, 132, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-title {
+  color: #d63384;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Photo option sections */
+.photo-option-section {
+  margin-bottom: 1.5rem;
+}
+
+.photo-option-label {
+  display: block;
+  color: #9d4766;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Hide default file input */
+.photo-file-input {
+  display: none;
+}
+
+/* Custom upload button */
+.photo-upload-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff80bf, #ff66b3);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+}
+
+.photo-upload-btn:hover {
+  background: linear-gradient(135deg, #ff66b3, #ff4da6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214, 51, 132, 0.4);
+}
+
+.photo-upload-btn:active {
+  transform: translateY(0);
+}
+
+/* Divider between options */
+.photo-divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.photo-divider::before,
+.photo-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ffe0f0;
+}
+
+.photo-divider::before {
+  left: 0;
+}
+
+.photo-divider::after {
+  right: 0;
+}
+
+.photo-divider span {
+  background: white;
+  padding: 0 1rem;
+  color: #9d4766;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* URL input field */
+.photo-url-input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #ffe0f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.photo-url-input:focus {
+  outline: none;
+  border-color: #ff80bf;
+  box-shadow: 0 0 0 3px rgba(255, 128, 191, 0.1);
+}
+
+/* Submit URL button */
+.photo-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #d63384, #c72876);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+}
+
+.photo-submit-btn:hover {
+  background: linear-gradient(135deg, #c72876, #b81f68);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214, 51, 132, 0.4);
+}
+
+.photo-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Cancel button */
+.photo-cancel-btn {
+  width: 100%;
+  padding: 1rem;
+  background: white;
+  color: #9d4766;
+  font-weight: 600;
+  border: 2px solid #ffe0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.photo-cancel-btn:hover {
+  background: #fff5f9;
+  border-color: #ffcce6;
+  transform: translateY(-2px);
+}
+
+.photo-cancel-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet view */
+@media (max-width: 992px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-card {
+    position: relative;
+    top: 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .child-profile-wrapper {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .child-basic-info {
+    flex-direction: column;
+  }
+  
+  .info-badge {
+    max-width: 100%;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .profile-photo-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .child-name {
+    font-size: 1.5rem;
+  }
+}

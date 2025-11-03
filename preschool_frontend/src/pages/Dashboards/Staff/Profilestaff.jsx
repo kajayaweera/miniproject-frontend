@@ -1,0 +1,171 @@
+import "../../../css/Profilestaff.css";
+import React, { useState } from "react";
+
+
+const Profilestaff = () => {
+  const [editing, setEditing] = useState(false);
+  const [staffData, setStaffData] = useState({
+    name: "Ms. Kavindi Perera",
+    role: "Preschool Teacher",
+    email: "kavindi@sunshinepreschool.com",
+    phone: "+94 77 123 4567",
+    address: "Colombo, Sri Lanka",
+    qualification: "Diploma in Early Childhood Education",
+    experience: "5 years",
+    about:
+      "Passionate preschool teacher focused on nurturing creativity, kindness, and confidence in children through playful learning.",
+    skills: ["Child Care", "Storytelling", "Art & Craft", "Teamwork"],
+    profilePic: "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
+  });
+
+  const [newImage, setNewImage] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setStaffData({ ...staffData, [name]: value });
+  };
+
+  const toggleEdit = () => {
+    if (editing && newImage) {
+      setStaffData({ ...staffData, profilePic: newImage });
+      setNewImage(null);
+    }
+    setEditing(!editing);
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const preview = URL.createObjectURL(file);
+      setNewImage(preview);
+    }
+  };
+
+  return (
+    <div className="staff-profile-container">
+      <div className="profile-header">
+        <div className="profile-image-wrapper">
+          <img
+            src={newImage || staffData.profilePic}
+            alt="Profile"
+            className="profile-image"
+          />
+          {editing && (
+            <div className="upload-overlay">
+              <label htmlFor="upload-photo" className="upload-btn">
+                📷
+              </label>
+              <input
+                id="upload-photo"
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                hidden
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="profile-basic-info">
+          <h2>{staffData.name}</h2>
+          <p>{staffData.role}</p>
+        </div>
+
+        <button className="edit-btn" onClick={toggleEdit}>
+          {editing ? "Save" : "Edit"}
+        </button>
+      </div>
+
+      <div className="profile-body">
+        <div className="profile-section">
+          <h3>Personal Information</h3>
+          <div className="info-grid">
+            <p>
+              <strong>Email:</strong>{" "}
+              {editing ? (
+                <input
+                  name="email"
+                  value={staffData.email}
+                  onChange={handleChange}
+                />
+              ) : (
+                staffData.email
+              )}
+            </p>
+            <p>
+              <strong>Phone:</strong>{" "}
+              {editing ? (
+                <input
+                  name="phone"
+                  value={staffData.phone}
+                  onChange={handleChange}
+                />
+              ) : (
+                staffData.phone
+              )}
+            </p>
+            <p>
+              <strong>Address:</strong>{" "}
+              {editing ? (
+                <input
+                  name="address"
+                  value={staffData.address}
+                  onChange={handleChange}
+                />
+              ) : (
+                staffData.address
+              )}
+            </p>
+          </div>
+        </div>
+
+        <div className="profile-section">
+          <h3>Professional Details</h3>
+          <div className="info-grid">
+            <p>
+              <strong>Qualification:</strong>{" "}
+              {editing ? (
+                <input
+                  name="qualification"
+                  value={staffData.qualification}
+                  onChange={handleChange}
+                />
+              ) : (
+                staffData.qualification
+              )}
+            </p>
+            <p>
+              <strong>Experience:</strong>{" "}
+              {editing ? (
+                <input
+                  name="experience"
+                  value={staffData.experience}
+                  onChange={handleChange}
+                />
+              ) : (
+                staffData.experience
+              )}
+            </p>
+          </div>
+        </div>
+
+        <div className="profile-section">
+          <h3>About</h3>
+          {editing ? (
+            <textarea
+              name="about"
+              value={staffData.about}
+              onChange={handleChange}
+            ></textarea>
+          ) : (
+            <p>{staffData.about}</p>
+          )}
+        </div>
+
+        
+      </div>
+    </div>
+  );
+};
+
+export default Profilestaff;
