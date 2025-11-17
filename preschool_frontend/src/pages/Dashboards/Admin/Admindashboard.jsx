@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
 import '../../../css/admindash.css';
+import Timetable from "../Parent/Timetable"; 
+import StaffAttendance from './StaffAttendance';
+import Updates from "../Parent/Updates"; 
+import Notices from '../Parent/Notices';
+import Events from '../Parent/Events';
+import Gallery from '../Parent/Gallery';
+import LiveStream from '../Parent/LiveStream';
+import CommonNotices from './CommonNotices';
+import Feedback from './Feedback';
+
 
 function Admindashboard() {
     const [activeTab, setActiveTab] = useState('Home');
 
     const menuItems = [
         { name: 'Home', icon: '🏠' },
-        { name: 'Staff Profile', icon: '👤' },
+        { name: 'Staff Attendance', icon: '☑️' },
         { name: 'Timetable', icon: '📅' },
-        { name: 'Activities', icon: '🎯' },
-        { name: 'Digital Reports', icon: '📊' },
+        
         { name: 'Updates', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
+        { name: 'Common Notices', icon: '📝' },
+        { name: 'Feedbacks', icon: '✉️' },
         { name: 'Payment', icon: '💳' },
         { name: 'See My Child', icon: '👶' },
         { name: 'Events', icon: '🎉' },
         { name: 'Gallery', icon: '📸' },
-        
     ];
 
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
-        // Add your navigation logic here
         console.log(`Navigating to: ${tabName}`);
     };
 
     return (
         <div className="dashboard-wrapper">
+            {/* Sidebar */}
             <div className="sidebar-container">
-                {/* Header */}
                 <div className="dashboard-header">
                     <h1 className="dashboard-title">ADMIN DASHBOARD</h1>
-                    <div className="welcome-message">
-                        Welcome back! 👋
-                    </div>
+                    <div className="welcome-message">Welcome back! 👋</div>
                 </div>
 
-                {/* Navigation Menu */}
                 <nav className="navigation-menu">
                     {menuItems.map((item, index) => (
                         <button
@@ -50,7 +56,6 @@ function Admindashboard() {
                     ))}
                 </nav>
 
-                {/* Footer */}
                 <div className="dashboard-footer">
                     <p>&copy; 2025 Staff Portal</p>
                 </div>
@@ -58,13 +63,11 @@ function Admindashboard() {
 
             {/* Main Content */}
             <div className="main-content">
-                <div className="content-header">
-                    <h2>{activeTab}</h2>
-                </div>
+                
 
-                {activeTab === 'Home' ? (
+                {/* Home Section */}
+                {activeTab === 'Home' && (
                     <div className="home-dashboard">
-                        {/* Quick Stats */}
                         <div className="stats-grid">
                             <div className="stat-card pink-card">
                                 <h3>👩‍🏫 8</h3>
@@ -84,7 +87,6 @@ function Admindashboard() {
                             </div>
                         </div>
 
-                        {/* Announcement / Notices */}
                         <div className="announcement-section">
                             <h3>📢 Announcements</h3>
                             <ul>
@@ -94,9 +96,26 @@ function Admindashboard() {
                             </ul>
                         </div>
                     </div>
-                ) : (
+                )}
+
+                {activeTab === "Timetable" && <Timetable />}
+                {activeTab === 'Staff Attendance' && <StaffAttendance />}
+                {activeTab === "Updates" && <Updates />}
+                {activeTab === "Special Notices" && <Notices />}
+                {activeTab === "Events" && <Events />}
+                {activeTab === "See My Child" && <LiveStream />}
+                {activeTab === "Gallery" && <Gallery />}
+                {activeTab === "Common Notices" && <CommonNotices />}
+                {activeTab === "Feedbacks" && <Feedback />}
+               
+
+                
+                {activeTab !== 'Home' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== 'Timetable' && activeTab !== "See My Child" && activeTab !== "Common Notices" && activeTab !== "Feedbacks" && (
                     <div className="content-body">
-                        <p>Content for {activeTab} will be displayed here.</p>
+                        <h2 className="content-title">{activeTab}</h2>
+                        <p className="content-text">
+                            Content for <b>{activeTab}</b> will be displayed here.
+                        </p>
                     </div>
                 )}
             </div>

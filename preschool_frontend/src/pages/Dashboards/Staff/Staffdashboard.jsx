@@ -3,7 +3,6 @@ import '../../../css/staffdash.css';
 import Timetable from "../Parent/Timetable"; 
 import Digitalreport from '../Parent/Digitalreport';
 import Profilestaff from './Profilestaff';
-import StaffAttendance from './StaffAttendance';
 import Updates from "../Parent/Updates"; 
 import Notices from '../Parent/Notices';
 import Events from '../Parent/Events';
@@ -16,7 +15,6 @@ function Staffdashboard() {
         { name: 'Home', icon: '🏠' },
         { name: 'Staff Profile', icon: '👤' },
         { name: 'Timetable', icon: '📅' },
-        { name: 'Staff Attendance', icon: '☑️' },
         { name: 'Digital Reports', icon: '📊' },
         { name: 'Updates', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
@@ -89,7 +87,6 @@ function Staffdashboard() {
                 {activeTab === "Timetable" && <Timetable />}
                 {activeTab === "Digital Reports" && <Digitalreport />}
                 {activeTab === "Staff Profile" && <Profilestaff />}
-                {activeTab === "Staff Attendance" && <StaffAttendance />}
                 {activeTab === "Updates" && <Updates />}
                 {activeTab === "Special Notices" && <Notices />}
                 {activeTab === "Events" && <Events />}

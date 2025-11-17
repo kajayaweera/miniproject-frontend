@@ -17,11 +17,14 @@ import Profilestd from './pages/Dashboards/Parent/Profilestd';
 import Digitalreport from './pages/Dashboards/Parent/Digitalreport';
 import Updates from './pages/Dashboards/Parent/Updates';
 import Profilestaff from './pages/Dashboards/Staff/Profilestaff';
-import StaffAttendance from './pages/Dashboards/Staff/StaffAttendance';
+import StaffAttendance from './pages/Dashboards/Admin/StaffAttendance';
 import Notices from './pages/Dashboards/Parent/Notices';
 import Events from './pages/Dashboards/Parent/Events';
 import Gallery from './pages/Dashboards/Parent/Gallery';
 import LiveStream from './pages/Dashboards/Parent/LiveStream';
+
+import Feedback from './pages/Dashboards/Admin/Feedback';
+import CommonNotices from './pages/Dashboards/Admin/CommonNotices';
 
 import { CartProvider } from "./Context/CartContext";  
 import ChildProfile from './pages/Dashboards/Parent/ChildProfile';
@@ -50,16 +53,13 @@ function App() {
           <Route path='/parent/updates' element={<Updates />} />
           <Route path='/parent/child/profile/update' element={<ChildProfile />} />
           <Route path='/staff/profilestaff' element={<Profilestaff />} />
-          <Route path='/staff/StaffAttendance' element={<StaffAttendance />} />
+          <Route path='/admin/StaffAttendance' element={<StaffAttendance />} />
           <Route path='/parent/events' element={<Notices />} />
           <Route path='/parent/events' element={<Events />} />
           <Route path='/parent/gallery' element={<Gallery />} />
           <Route path='/parent/livestream' element={<LiveStream />} />
-          
-
-          
-          
-
+          <Route path='/admin/CommonNotices' element={<CommonNotices />} />
+          <Route path='/admin/feedback' element={<Feedback />} />
           
         </Routes>
       </Router>

@@ -142,13 +142,14 @@
 
 /* Courses Section */
 .courses-section {
-  padding: 80px 0;
+  padding: 80px 30px 30px 30px;
 }
 
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 40px;
+  
 }
 
 /* Course Card */
@@ -161,6 +162,7 @@
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
+  padding: 10px 10px 10px 10px;
 }
 
 .course-card:hover {

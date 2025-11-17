@@ -1,24 +1,24 @@
-
 import "../../../css/Notices.css";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
 
 function Notices() {
   const location = useLocation();
   const [notices, setNotices] = useState([]);
   const [newNotice, setNewNotice] = useState({ title: "", message: "" });
 
-  // Check if current user is Staff or Parent
+  // Role detection
   const isStaff = location.pathname.includes("/staff/dashboard");
+  const isAdmin = location.pathname.includes("/admin/dashboard");
+  const isParent = location.pathname.includes("/parent/dashboard");
 
-  // Load saved notices (simulate database with localStorage)
+  // Load saved notices from localStorage
   useEffect(() => {
     const storedNotices = JSON.parse(localStorage.getItem("notices")) || [];
     setNotices(storedNotices);
   }, []);
 
-  // Save notices whenever they change
+  // Save notices to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("notices", JSON.stringify(notices));
   }, [notices]);
@@ -29,8 +29,10 @@ function Notices() {
   };
 
   const addNotice = () => {
-    if (!newNotice.title || !newNotice.message)
-      return alert("Please fill in both title and message!");
+    if (!newNotice.title || !newNotice.message) {
+      alert("Please fill in both title and message!");
+      return;
+    }
     const newId = Date.now();
     setNotices([...notices, { id: newId, ...newNotice }]);
     setNewNotice({ title: "", message: "" });
@@ -41,8 +43,9 @@ function Notices() {
   };
 
   const updateNotice = (id) => {
-    const updatedTitle = prompt("Enter updated title:");
-    const updatedMsg = prompt("Enter updated message:");
+    const noticeToUpdate = notices.find((n) => n.id === id);
+    const updatedTitle = prompt("Enter updated title:", noticeToUpdate.title);
+    const updatedMsg = prompt("Enter updated message:", noticeToUpdate.message);
     if (updatedTitle) {
       setNotices(
         notices.map((notice) =>
@@ -58,7 +61,8 @@ function Notices() {
     <div className="notices-container">
       <h1 className="notices-title">📢 Preschool Notices</h1>
 
-      {isStaff && (
+      {/* Staff or Admin can add notices */}
+      {(isStaff || isAdmin) && (
         <div className="add-notice-form">
           <h2>Add New Notice</h2>
           <input
@@ -80,6 +84,7 @@ function Notices() {
         </div>
       )}
 
+      {/* Notices List */}
       <div className="notices-list">
         {notices.length === 0 ? (
           <p className="no-notices">No notices available</p>
@@ -88,12 +93,20 @@ function Notices() {
             <div className="notice-card" key={notice.id}>
               <h3>{notice.title}</h3>
               <p>{notice.message}</p>
-              {isStaff && (
+
+              {/* Only staff or admin can edit/delete */}
+              {(isStaff || isAdmin) && (
                 <div className="notice-actions">
-                  <button onClick={() => updateNotice(notice.id)} className="edit-btn">
+                  <button
+                    onClick={() => updateNotice(notice.id)}
+                    className="edit-btn"
+                  >
                     Edit
                   </button>
-                  <button onClick={() => deleteNotice(notice.id)} className="delete-btn">
+                  <button
+                    onClick={() => deleteNotice(notice.id)}
+                    className="delete-btn"
+                  >
                     Delete
                   </button>
                 </div>

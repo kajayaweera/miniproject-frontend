@@ -165,19 +165,19 @@ function About() {
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">15+</div>
-              <div className="stat-label">Years of Experience</div>
+              <div className="stat-label-2">Years of Experience</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">200+</div>
-              <div className="stat-label">Happy Students</div>
+              <div className="stat-label-2">Happy Students</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">8</div>
-              <div className="stat-label">Expert Teachers</div>
+              <div className="stat-label-2">Expert Teachers</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">100%</div>
-              <div className="stat-label">Parent Satisfaction</div>
+              <div className="stat-label-2">Parent Satisfaction</div>
             </div>
           </div>
         </div>
@@ -237,13 +237,13 @@ function About() {
               Give your child the best start in their educational journey. 
               Contact us today to learn more about enrollment.
             </p>
-            <div className="cta-buttons">
-              <a href="/contact" className="cta-btn primary">
-                <span className="btn-icon">📞</span>
+            <div className="cta-buttons-2">
+              <a href="/contact" className="cta-btn-2 primary">
+                <span className="btn-icon-2">📞</span>
                 Contact Us
               </a>
-              <a href="/register" className="cta-btn secondary">
-                <span className="btn-icon">📝</span>
+              <a href="/register" className="cta-btn-2 secondary">
+                <span className="btn-icon-2">📝</span>
                 Enroll Now
               </a>
             </div>

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 90vh;
-  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  background: linear-gradient(135deg, #ff76dd, #e185bd);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -60,7 +60,7 @@
 
 /* Button */
 .register-btn {
-  background: #4e9af1;
+  background: #721052;
   color: white;
   border: none;
   padding: 12px;

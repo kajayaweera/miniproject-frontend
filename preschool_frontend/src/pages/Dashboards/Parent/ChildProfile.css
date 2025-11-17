@@ -1,71 +1,345 @@
-.create-child-profile-wrapper {
+/* ==========================================
+   CONTAINER & LAYOUT
+   ========================================== */
+
+/* Main container - centers content on page */
+.profile-container {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
-  font-family: "Poppins", sans-serif;
-}
-
-.create-child-profile-card {
+  align-items: center;
+  min-height: 80vh;
   width: 100%;
-  max-width: 420px;
-  background: #fff0f6;
-  border-radius: 12px;
-  padding: 26px;
-  box-shadow: 0 6px 18px rgba(255, 105, 180, 0.12);
+  padding: 20px;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.create-child-title {
-  margin: 0 0 18px;
-  color: #ff4da6;
+/* Main card wrapper */
+.profile-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(233, 30, 99, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* Fade in animation for card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   HEADER SECTION
+   ========================================== */
+
+/* Header container */
+.profile-header {
   text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #fce4ec;
 }
 
-.create-child-form {
+/* Main title */
+.profile-title {
+  margin: 0 0 8px 0;
+  color: #d81b60;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+
+
+/* ==========================================
+   FORM STYLES
+   ========================================== */
+
+/* Form container */
+.profile-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 }
 
-.create-label {
+/* Row for side-by-side inputs (first/last name) */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Individual form field container */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+/* Label styling */
+.form-label {
   font-weight: 600;
-  color: #c30f6f;
-  text-align: left;
-}
-
-.create-input,
-.create-file-input {
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ffcada;
-  background: #fff;
-  outline: none;
+  color: #880e4f;
   font-size: 14px;
+  
 }
 
-.create-input:focus,
-.create-file-input:focus {
-  border-color: #ff4da6;
-  box-shadow: 0 0 0 3px rgba(255, 77, 166, 0.06);
+/* Required field asterisk */
+.required {
+  color: #f50057;
+  margin-left: 2px;
 }
 
-.create-submit-btn {
-  margin-top: 6px;
-  background: linear-gradient(90deg,#ff4da6,#ff2d95);
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
+/* ==========================================
+   INPUT FIELDS
+   ========================================== */
+
+/* Text and number inputs */
+.form-input {
+  padding: 12px 16px;
+  border: 2px solid #f8bbd0;
   border-radius: 10px;
+  background: #ffffff;
+  font-size: 15px;
+  color: #424242;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Input focus state */
+.form-input:focus {
+  border-color: #ec407a;
+  box-shadow: 0 0 0 4px rgba(236, 64, 122, 0.1);
+}
+
+/* Input hover state */
+.form-input:hover {
+  border-color: #f48fb1;
+}
+
+/* Input error state */
+.form-input.input-error {
+  border-color: #f50057;
+  background: #fff5f8;
+}
+
+/* Error message text */
+.error-message {
+  color: #f50057;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================
+   FILE UPLOAD
+   ========================================== */
+
+/* File upload wrapper */
+.file-upload-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide default file input */
+.file-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom file upload button */
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 2px dashed #f48fb1;
+  border-radius: 10px;
+  background: #fce4ec;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #880e4f;
+  font-weight: 500;
+}
+
+/* File upload hover state */
+.file-upload-label:hover {
+  background: #f8bbd0;
+  border-color: #ec407a;
+}
+
+/* Upload icon */
+.upload-icon {
+  width: 24px;
+  height: 24px;
+  color: #ec407a;
+  flex-shrink: 0;
+}
+
+/* Image preview container */
+.image-preview {
+  margin-top: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #f8bbd0;
+  background: #fafafa;
+}
+
+/* Preview image */
+.image-preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+   SUBMIT BUTTON
+   ========================================== */
+
+/* Submit button */
+.submit-button {
+  margin-top: 8px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ec407a 0%, #d81b60 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(236, 64, 122, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.create-submit-btn:disabled {
-  opacity: 0.6;
+/* Button hover state */
+.submit-button:hover {
+  background: linear-gradient(135deg, #d81b60 0%, #ad1457 100%);
+  box-shadow: 0 6px 16px rgba(236, 64, 122, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Button active/pressed state */
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(236, 64, 122, 0.3);
+}
+
+/* Button disabled state */
+.submit-button:disabled {
+  background: #f48fb1;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.7;
 }
 
-.create-loading {
-  padding: 20px;
-  text-align: center;
-  color: #ff4da6;
+/* Loading spinner inside button */
+.button-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   LOADING STATE
+   ========================================== */
+
+/* Loading state container */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 20px;
+  color: #d81b60;
+  font-weight: 500;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f8bbd0;
+  border-top-color: #ec407a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 28px 24px;
+  }
+
+  .profile-title {
+    font-size: 26px;
+  }
+
+  
+
+  /* Stack name fields on mobile */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 16px;
+  }
+
+  .profile-card {
+    padding: 24px 20px;
+  }
+
+  .profile-title {
+    font-size: 24px;
+  }
+
+  .form-input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
 }

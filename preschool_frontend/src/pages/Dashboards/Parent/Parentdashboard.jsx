@@ -79,7 +79,7 @@ function Parentdashboard() {
                         <div className="home-cards">
                             <div className="card pink-card">😊 Mood Today: Happy</div>
                             <div className="card white-card">📊 Learning Progress: 75%</div>
-                            <div className="card pink-card">📅 Next Event: Sports Day – Sept 15</div>
+                            <div className="card pink-card">📅 Next Event: Christmas Celebration – December 25</div>
                         </div>
 
                         {/* Announcements */}
@@ -109,7 +109,7 @@ function Parentdashboard() {
                 {activeTab === "Update Child Profile" && <ChildProfile />}
                 
 
-{activeTab !== "Home" && activeTab !== "Timetable" &&  activeTab !== "Bedtime Story" && activeTab !== "Billing" && activeTab !== "Child Profile" && activeTab !== "Digital Reports" && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== "See My Child" &&(
+{activeTab !== "Home" && activeTab !== "Timetable" &&  activeTab !== "Bedtime Story" && activeTab !== "Billing" && activeTab !== "Child Profile" && activeTab !== "Update Child Profile" && activeTab !== "Digital Reports" && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== "See My Child" &&(
     <div className="content-body">
         <h2 className="content-title">{activeTab}</h2>
         <p className="content-text">
