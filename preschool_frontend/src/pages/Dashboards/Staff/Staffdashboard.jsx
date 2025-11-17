@@ -7,6 +7,8 @@ import Updates from "../Parent/Updates";
 import Notices from '../Parent/Notices';
 import Events from '../Parent/Events';
 import Gallery from '../Parent/Gallery';
+import UpdateChildrend from './UpdateChildrend';
+import Salary from './Salary';
 
 function Staffdashboard() {
     const [activeTab, setActiveTab] = useState('Home');
@@ -16,9 +18,9 @@ function Staffdashboard() {
         { name: 'Staff Profile', icon: '👤' },
         { name: 'Timetable', icon: '📅' },
         { name: 'Digital Reports', icon: '📊' },
-        { name: 'Updates', icon: '🔔' },
+        { name: 'update profiles', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
-        { name: 'Salary', icon: '💸' },
+        { name: 'my salary', icon: '💸' },
         { name: 'Events', icon: '🎉' },
         { name: 'Gallery', icon: '📸' },
         
@@ -91,8 +93,10 @@ function Staffdashboard() {
                 {activeTab === "Special Notices" && <Notices />}
                 {activeTab === "Events" && <Events />}
                 {activeTab === "Gallery" && <Gallery />}
+                {activeTab === "update profiles" && <UpdateChildrend />}
+                {activeTab === "my salary" && <Salary />}
 
-                {activeTab !== 'Home' && activeTab !== 'Timetable' && activeTab !== 'Digital Reports' && activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" &&(
+                {activeTab !== 'Home' && activeTab !== 'Timetable' && activeTab !== 'Digital Reports' && activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" &&(
                     <div className="content-body">
                         <h2 className="content-title">{activeTab}</h2>
                         <p className="content-text">

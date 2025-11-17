@@ -9,6 +9,8 @@ import Gallery from '../Parent/Gallery';
 import LiveStream from '../Parent/LiveStream';
 import CommonNotices from './CommonNotices';
 import Feedback from './Feedback';
+import PaymentsView from './PaymentsView';
+import SallaryUpdate from './SallaryUpdate';
 
 
 function Admindashboard() {
@@ -18,12 +20,12 @@ function Admindashboard() {
         { name: 'Home', icon: '🏠' },
         { name: 'Staff Attendance', icon: '☑️' },
         { name: 'Timetable', icon: '📅' },
-        
         { name: 'Updates', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
         { name: 'Common Notices', icon: '📝' },
         { name: 'Feedbacks', icon: '✉️' },
-        { name: 'Payment', icon: '💳' },
+        { name: 'received payments', icon: '💳' },
+        { name: 'Staff Salaries', icon: '💳' },
         { name: 'See My Child', icon: '👶' },
         { name: 'Events', icon: '🎉' },
         { name: 'Gallery', icon: '📸' },
@@ -107,6 +109,8 @@ function Admindashboard() {
                 {activeTab === "Gallery" && <Gallery />}
                 {activeTab === "Common Notices" && <CommonNotices />}
                 {activeTab === "Feedbacks" && <Feedback />}
+                {activeTab === "received payments" && <PaymentsView />}
+                {activeTab === "Staff Salaries" && <SallaryUpdate />}
                
 
                 

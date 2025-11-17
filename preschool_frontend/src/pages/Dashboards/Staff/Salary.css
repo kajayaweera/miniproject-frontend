@@ -1,0 +1,133 @@
+.salary-container-unique {
+    padding: 2rem;
+    background-color: #fff0f5;
+    min-height: 100vh;
+}
+
+.salary-title-unique {
+    color: #e91e63;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.salary-loading-unique,
+.salary-error-unique,
+.salary-empty-unique {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+.salary-error-unique {
+    color: #d32f2f;
+}
+
+.salary-cards-grid-unique {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.salary-card-unique {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(233, 30, 99, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #ffc0cb;
+}
+
+.salary-card-unique:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(233, 30, 99, 0.2);
+}
+
+.salary-card-header-unique {
+    background: linear-gradient(135deg, #ff69b4, #e91e63);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.salary-card-header-unique h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.salary-date-unique {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.salary-card-body-unique {
+    padding: 1.5rem;
+}
+
+.salary-item-unique {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ffc0cb;
+}
+
+.salary-item-unique:last-child {
+    border-bottom: none;
+}
+
+.salary-label-unique {
+    color: #666;
+    font-weight: 500;
+}
+
+.salary-value-unique {
+    color: #e91e63;
+    font-weight: 600;
+}
+
+.salary-total-unique {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e91e63;
+}
+
+.salary-total-unique .salary-value-unique {
+    font-size: 1.3rem;
+    color: #c2185b;
+}
+
+.salary-download-btn-unique {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff69b4, #e91e63);
+    color: white;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.salary-download-btn-unique:hover {
+    background: linear-gradient(135deg, #e91e63, #c2185b);
+}
+
+.salary-download-btn-unique:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .salary-container-unique {
+        padding: 1rem;
+    }
+    
+    .salary-cards-grid-unique {
+        grid-template-columns: 1fr;
+    }
+}

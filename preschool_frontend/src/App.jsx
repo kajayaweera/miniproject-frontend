@@ -28,6 +28,11 @@ import CommonNotices from './pages/Dashboards/Admin/CommonNotices';
 
 import { CartProvider } from "./Context/CartContext";  
 import ChildProfile from './pages/Dashboards/Parent/ChildProfile';
+import UpdateChildrend from './pages/Dashboards/Staff/UpdateChildrend';
+import Checkout from './pages/Dashboards/Parent/Checkout';
+import PaymentsView from './pages/Dashboards/Admin/PaymentsView';
+import SallaryUpdate from './pages/Dashboards/Admin/SallaryUpdate';
+import Salary from './pages/Dashboards/Staff/Salary';
 
 
 function App() {
@@ -44,6 +49,7 @@ function App() {
           <Route path='/cources' element={<Cources />} />
           <Route path='/parent/dashboard' element={<Parentdashboard />} />
           <Route path='/staff/dashboard' element={<Staffdashboard />} />
+          <Route path='/staff/salary' element={<Salary />} />
           <Route path='/admin/dashboard' element={<Admindashboard />} />
           <Route path='/parent/timetable' element={<Timetable />} /> 
           <Route path='/parent/bedtimestory' element={<Bedtimestory />} />
@@ -60,6 +66,10 @@ function App() {
           <Route path='/parent/livestream' element={<LiveStream />} />
           <Route path='/admin/CommonNotices' element={<CommonNotices />} />
           <Route path='/admin/feedback' element={<Feedback />} />
+          <Route path='/admin/payments' element={<PaymentsView />} />
+          <Route path='/admin/sallary/update' element={<SallaryUpdate />} />
+          <Route path='/staff/update/profiles' element={<UpdateChildrend />} />
+          <Route path='/checkout' element={<Checkout />} />
           
         </Routes>
       </Router>

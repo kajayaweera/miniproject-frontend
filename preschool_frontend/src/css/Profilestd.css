@@ -2,12 +2,27 @@
    Child Profile Styles - Pink & White Theme
    ======================================== */
 
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Main wrapper - centers everything on page */
 .child-profile-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffe0f0 0%, #fff5f9 100%);
+  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd4eb 100%);
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 /* Container - holds all profile content */
@@ -21,7 +36,19 @@
    ======================================== */
 .profile-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .page-title {
@@ -32,78 +59,79 @@
   text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.1);
 }
 
-/* ========================================
-   Main Content Grid Layout
-   ======================================== */
-.profile-content {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-/* ========================================
-   Left Column - Profile Card
-   ======================================== */
+/* Profile Card */
 .profile-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 24px rgba(214, 51, 132, 0.15);
-  text-align: center;
-  position: sticky;
-  top: 2rem;
-}
-
-.profile-photo-wrapper {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffb3d9, #ff80bf);
-  padding: 5px;
-  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
-  position: relative;
-}
-
-.profile-photo {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 3rem;
+  max-width: 900px;
   width: 100%;
-  height: 100%;
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+  animation: fadeInUp 0.8s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Picture */
+.profile-pic-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  background: white;
-  border: 3px solid white;
+  border: 6px solid #ff69b4;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Edit Photo Button */
-.edit-photo-btn {
+.profile-pic:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.6);
+}
+
+/* Mood Badge */
+.mood-badge {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: white;
-  border: 3px solid #ff80bf;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff1493, #ff69b4);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  animation: pulse 2s infinite;
+  box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
 }
 
-.edit-photo-btn:hover {
-  background: #ffe0f0;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.4);
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-.edit-photo-btn:active {
-  transform: scale(0.95);
-}
-
+/* Child Name */
 .child-name {
   color: #d63384;
   font-size: 1.8rem;
@@ -539,6 +567,23 @@
   
   .info-badge {
     max-width: 100%;
+  }
+  
+  .profile-card {
+    padding: 2rem;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-content {
+    grid-template-columns: 1fr;
   }
 }
 

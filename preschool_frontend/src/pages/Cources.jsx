@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import '../css/Cources.css';
 import { Link } from 'react-router-dom';
 import { useCart } from '../Context/CartContext'; // ✅ import context
@@ -12,12 +12,14 @@ import art from '../assets/pencil_art.jpg';
 import gymnastic from '../assets/gymnastic.jpg';
 import yoga from '../assets/yoga.jpg';
 import sport from '../assets/mini_athletics.jpg';
+import { AppContext } from '../Context/AppProvider';
 
 
 function Cources() {
   const { cart, addToCart, removeFromCart } = useCart(); // ✅ use context
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
+  const {user} = useContext(AppContext);
 
   const courses = [
     { id: 1, name: 'Swimming', image: swimming, price: 1000, description: 'Learn swimming techniques and water safety', duration: '1 hour per session' },
@@ -62,7 +64,8 @@ function Cources() {
         {cart.length > 0 && (
           <div className="cart-summary">
             <span>🛒 {cart.length} selected | Total: Rs.{getTotalPrice()}</span>
-            <Link to="/login" className="view-cart-btn">Login & View Bill</Link>
+            {user ? <Link to="/parent/billing" className="view-cart-btn">View Bill</Link>:
+            <Link to="/login" className="view-cart-btn">Login & View Bill</Link>}
           </div>
         )}
       </section>

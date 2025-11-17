@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import { useCart } from "../../../Context/CartContext";
+import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "../../../css/Billing.css";
 
 function Billing() {
   const { cart } = useCart();
+  const navigate = useNavigate();
   const billRef = useRef(null);
 
   const facilityFee = 1500;
@@ -22,6 +24,10 @@ function Billing() {
 
     pdf.addImage(imgData, "PNG", 0, 0, width, height);
     pdf.save("Preschool_Bill.pdf");
+  };
+
+  const handlePayNow = () => {
+    navigate("/checkout", { state: { cart, facilityFee, total } });
   };
 
   return (
@@ -82,7 +88,7 @@ function Billing() {
 
       <div className="billing-actions">
         <button className="download-btn" onClick={downloadPDF}>📥 Download Bill PDF</button>
-        <button className="pay-btn">💳 Pay Now</button>
+        <button className="pay-btn" onClick={handlePayNow}>💳 Pay Now</button>
       </div>
     </div>
   );

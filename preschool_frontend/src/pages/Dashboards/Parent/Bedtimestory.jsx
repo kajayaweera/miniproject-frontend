@@ -1,20 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../../css/Bedtimestory.css";
 
-// --- Story Generator (Enhanced with multiple templates) ---
-function generateStory(prompt) {
-  const templates = [
-    `Once upon a time, in a magical land far away, ${prompt}. As the stars twinkled above, they discovered that true magic comes from within. They learned the value of kindness, friendship, and courage. And they all lived happily ever after. 🌙✨`,
-    
-    `In a cozy little village, ${prompt}. Through their adventure, they found that the greatest treasures are the friends we make along the way. With hearts full of joy, they drifted off to peaceful dreams. 💫🌟`,
-    
-    `Long, long ago, ${prompt}. The moon smiled down upon them as they realized that being brave doesn't mean not being scared—it means doing what's right even when you are. Sweet dreams filled their nights forever after. 🌛💤`,
-  ];
-  
-  const randomIndex = Math.floor(Math.random() * templates.length);
-  return templates[randomIndex];
-}
-
 // ---------------- Welcome Message ----------------
 function WelcomeMessage() {
   return (
@@ -58,38 +44,63 @@ function ChatInput({ chatMessages, setChatMessages, isTyping, setIsTyping }) {
     }
   }
 
-  function sendMessage() {
+  async function sendMessage() {
     if (!inputText.trim() || isTyping) return;
 
-    const newChatMessages = [
-      ...chatMessages,
-      {
-        message: inputText,
-        sender: "user",
-        id: crypto.randomUUID(),
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      },
-    ];
+    const userMessage = {
+      message: inputText,
+      sender: "user",
+      id: crypto.randomUUID(),
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    };
 
     // Add user message
-    setChatMessages(newChatMessages);
+    setChatMessages([...chatMessages, userMessage]);
     setInputText("");
     setIsTyping(true);
 
-    // Generate bot response with delay
-    setTimeout(() => {
-      const response = generateStory(inputText);
-      setChatMessages([
-        ...newChatMessages,
+    try {
+      // Send message to backend
+      const response = await fetch('/api/chat/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: inputText }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get response from server');
+      }
+
+      const data = await response.json();
+
+      // Add bot response
+      setChatMessages(prev => [
+        ...prev,
         {
-          message: response,
+          message: data.response || data.message || "I couldn't generate a story right now. Please try again!",
           sender: "robot",
           id: crypto.randomUUID(),
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         },
       ]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      
+      // Add error message
+      setChatMessages(prev => [
+        ...prev,
+        {
+          message: "Sorry, I'm having trouble connecting right now. Please try again later. 😔",
+          sender: "robot",
+          id: crypto.randomUUID(),
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        },
+      ]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   }
 
   return (
