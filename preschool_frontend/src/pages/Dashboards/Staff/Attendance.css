@@ -1,0 +1,163 @@
+.att-main-container {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fef5f9;
+    min-height: 100vh;
+}
+
+.att-page-title {
+    color: #d946a6;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.att-message-box {
+    background-color: #fce7f3;
+    border: 2px solid #ec4899;
+    color: #be185d;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.att-loading-state, .att-no-data {
+    text-align: center;
+    padding: 3rem;
+    color: #d946a6;
+    font-size: 1.2rem;
+}
+
+.att-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.att-child-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(217, 70, 166, 0.1);
+    border: 2px solid #fce7f3;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.att-child-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(217, 70, 166, 0.2);
+}
+
+.att-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #fce7f3;
+}
+
+.att-child-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ec4899;
+}
+
+.att-child-details h3 {
+    color: #be185d;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.att-child-details p {
+    color: #9f1239;
+    margin: 0.25rem 0 0 0;
+    font-size: 0.9rem;
+}
+
+.att-status-wrapper {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.att-status-label {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.att-status-label.att-present {
+    background-color: #bbf7d0;
+    color: #15803d;
+}
+
+.att-status-label.att-absent {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+.att-action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.att-action-buttons button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.att-btn-mark-present {
+    background-color: #ec4899;
+    color: white;
+}
+
+.att-btn-mark-present:hover:not(:disabled) {
+    background-color: #db2777;
+    transform: scale(1.02);
+}
+
+.att-btn-mark-absent {
+    background-color: #fce7f3;
+    color: #be185d;
+    border: 2px solid #ec4899;
+}
+
+.att-btn-mark-absent:hover:not(:disabled) {
+    background-color: #fbcfe8;
+    transform: scale(1.02);
+}
+
+.att-action-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .att-main-container {
+        padding: 1rem;
+    }
+
+    .att-page-title {
+        font-size: 2rem;
+    }
+
+    .att-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

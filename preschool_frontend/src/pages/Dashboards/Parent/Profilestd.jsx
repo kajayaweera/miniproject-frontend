@@ -46,6 +46,13 @@ function ChildProfile() {
           </div>
           <h1 className="profile-name">{childprofile.name}</h1>
           <p className="profile-age">{childprofile.age} years old</p>
+          
+          {/* Attendance Status */}
+          <div className="attendance-indicator">
+            <span className={`attendance-badge ${childprofile.attendance ? 'present' : 'absent'}`}>
+              {childprofile.attendance ? '✓ Present Today' : '✗ Absent Today'}
+            </span>
+          </div>
         </div>
 
         <div className="profile-content">

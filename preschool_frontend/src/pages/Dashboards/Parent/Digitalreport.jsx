@@ -16,25 +16,17 @@ import "../../../css/Digitalreport.css";
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 
 const Digitalreport = () => {
-  const [selectedReport, setSelectedReport] = useState("academic");
+  const [selectedReport, setSelectedReport] = useState("attendance");
   const reportRef = useRef(null);
 
   const reports = {
-    academic: {
-      title: "Academic Progress",
-      labels: ["Math", "Reading", "Writing", "Science"],
-      data: [88, 92, 85, 90],
+    attendance: {
+      title: "Attendance Progress",
+      labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+      data: [95, 100, 90, 98],
       color: "rgba(75, 192, 192, 0.7)",
       summary:
-        "Your child shows excellent academic progress, performing strongly in reading and science. Continuous improvement in writing and math is noted.",
-    },
-    behavior: {
-      title: "Behavior Progress",
-      labels: ["Sharing", "Listening", "Helping", "Respect"],
-      data: [95, 88, 92, 97],
-      color: "rgba(255, 159, 64, 0.7)",
-      summary:
-        "Great behavior! Your child consistently demonstrates respect and helpfulness. Keep encouraging teamwork and active listening.",
+        "Your child has excellent attendance this month. Consistent presence helps with learning continuity and social development.",
     },
     mood: {
       title: "Mood Progress",

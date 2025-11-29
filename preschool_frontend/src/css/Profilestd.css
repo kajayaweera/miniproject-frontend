@@ -524,6 +524,48 @@
 }
 
 /* ========================================
+   Attendance Indicator
+   ======================================== */
+.attendance-indicator {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.attendance-badge {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+  animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.attendance-badge.present {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.attendance-badge.absent {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
 

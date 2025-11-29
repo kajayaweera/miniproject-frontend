@@ -1,21 +1,29 @@
+import { AppContext } from "../../../Context/AppProvider";
 import "../../../css/Profilestaff.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
+
+const images = [
+  "http://127.0.0.1:8000/images/chatura.jpg",
+  "http://127.0.0.1:8000/images/kushalika.jpg",
+  "http://127.0.0.1:8000/images/sandeepani.jpg"
+];
 
 const Profilestaff = () => {
+  const {user , token} = useContext(AppContext)
   const [editing, setEditing] = useState(false);
   const [staffData, setStaffData] = useState({
-    name: "Mr. Chatura Mendis",
+    name: user.name,
     role: "Preschool Teacher",
-    email: "chatura@gmail.com",
-    phone: "+94 77 123 4567",
-    address: "Colombo, Sri Lanka",
+    email: user.email,
+    phone: user.contact_number,
+    address: user.address,
     qualification: "B.Sc in Mathematics",
     experience: "5 years",
     about:
       "Passionate preschool teacher focused on nurturing creativity, kindness, and confidence in children through playful learning.",
     skills: ["Child Care", "Storytelling", "Art & Craft", "Teamwork"],
-    profilePic: "http://127.0.0.1:8000/images/chatura.jpg",
+    profilePic: images[Math.floor(Math.random() * images.length)],
   });
 
   const [newImage, setNewImage] = useState(null);

@@ -35,6 +35,7 @@ import SallaryUpdate from './pages/Dashboards/Admin/SallaryUpdate';
 import Salary from './pages/Dashboards/Staff/Salary';
 import { useContext } from 'react';
 import { AppContext } from './Context/AppProvider';
+import ChildrenAttendance from './pages/Dashboards/Staff/Attendance';
 
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
           <Route path='/admin/sallary/update' element={<SallaryUpdate />} />
           <Route path='/staff/update/profiles' element={<UpdateChildrend />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/children/attendance' element={<ChildrenAttendance/>} />
           
         </Routes>
       </Router>
