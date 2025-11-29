@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../../css/admindash.css';
 import Timetable from "../Parent/Timetable"; 
 import StaffAttendance from './StaffAttendance';
-import Updates from "../Parent/Updates"; 
+
 import Notices from '../Parent/Notices';
 import Events from '../Parent/Events';
 import Gallery from '../Parent/Gallery';
@@ -20,7 +20,7 @@ function Admindashboard() {
         { name: 'Home', icon: '🏠' },
         { name: 'Staff Attendance', icon: '☑️' },
         { name: 'Timetable', icon: '📅' },
-        { name: 'Updates', icon: '🔔' },
+        
         { name: 'Special Notices', icon: '📝' },
         { name: 'Common Notices', icon: '📝' },
         { name: 'Feedbacks', icon: '✉️' },
@@ -102,7 +102,7 @@ function Admindashboard() {
 
                 {activeTab === "Timetable" && <Timetable />}
                 {activeTab === 'Staff Attendance' && <StaffAttendance />}
-                {activeTab === "Updates" && <Updates />}
+                
                 {activeTab === "Special Notices" && <Notices />}
                 {activeTab === "Events" && <Events />}
                 {activeTab === "See My Child" && <LiveStream />}
@@ -114,7 +114,7 @@ function Admindashboard() {
                
 
                 
-                {activeTab !== 'Home' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== 'Timetable' && activeTab !== "See My Child" && activeTab !== "Common Notices" && activeTab !== "Feedbacks" && (
+                {activeTab !== 'Home' && activeTab !== 'Staff Attendance' &&  activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== 'Timetable' && activeTab !== "See My Child" && activeTab !== "Common Notices" && activeTab !== "Feedbacks" && activeTab !== "received payments" && activeTab !== "Staff Salaries" &&  (
                     <div className="content-body">
                         <h2 className="content-title">{activeTab}</h2>
                         <p className="content-text">

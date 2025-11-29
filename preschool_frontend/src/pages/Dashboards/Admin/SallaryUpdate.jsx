@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import "./SallaryUpdate.css"
 
-export default function SallaryUpdate(){
+export default function SallaryUpdate() {
 
     const [teachers, setTeachers] = useState([]);
     const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ export default function SallaryUpdate(){
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
-    async function getTeachers(){
+    async function getTeachers() {
         try {
             const res = await axios.get('/api/get/teachers/')
             setTeachers(res.data);
@@ -27,23 +27,49 @@ export default function SallaryUpdate(){
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+
+        // Salary Validations
+        if (name === "basic_salary" && (value < 0 || value > 50000)) {
+            setMessage("🛑 Please enter correct salary. Basic salary must be between 0 and 5000.");
+        } 
+        else if (name === "over_time" && (value < 0 || value > 50000)) {
+            setMessage("🛑 Please enter correct salary. Overtime must be between 0 and 5000.");
+        } 
+        else if (name === "fuel_allowence" && (value < 0 || value > 20000)) {
+            setMessage("🛑 Please enter correct salary. Fuel allowance must be between 0 and 2000.");
+        } 
+        else {
+            setMessage("");  // Clear message when valid
+        }
+
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
-    }
+    };
 
     const calculateNetSalary = () => {
         const basic = parseFloat(formData.basic_salary) || 0;
         const overtime = parseFloat(formData.over_time) || 0;
         const fuel = parseFloat(formData.fuel_allowence) || 0;
         return (basic + overtime + fuel).toFixed(2);
-    }
+    };
 
-    async function submitData(e){
+    async function submitData(e) {
         e.preventDefault();
-        setLoading(true);
         setMessage('');
+
+        // Prevent submit if invalid
+        if (
+            formData.basic_salary < 0 || formData.basic_salary > 50000 ||
+            formData.over_time < 0 || formData.over_time > 50000 ||
+            formData.fuel_allowence < 0 || formData.fuel_allowence > 20000
+        ) {
+            setMessage("🛑Please enter correct salary.");
+            return;
+        }
+
+        setLoading(true);
 
         const dataToSubmit = {
             ...formData,
@@ -63,21 +89,21 @@ export default function SallaryUpdate(){
             });
         } catch (error) {
             setMessage(error.response?.data?.message || 'Error submitting salary');
-            console.error('Error:', error);
         } finally {
             setLoading(false);
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getTeachers();
-    },[]);
- 
-    return(
+    }, []);
+
+    return (
         <div className="salary-update-container">
-            <h2>Update Teacher Salary</h2>
-            
+            <h2>💸 Update Teacher Salary</h2>
+
             <form onSubmit={submitData} className="salary-form">
+
                 <div className="form-group">
                     <label htmlFor="user_id">Select Teacher</label>
                     <select
@@ -108,8 +134,9 @@ export default function SallaryUpdate(){
                     />
                 </div>
 
+                {/* BASIC SALARY */}
                 <div className="form-group">
-                    <label htmlFor="basic_salary">Basic Salary</label>
+                    <label htmlFor="basic_salary">Basic Salary (0 - 50000)</label>
                     <input
                         type="number"
                         id="basic_salary"
@@ -117,13 +144,15 @@ export default function SallaryUpdate(){
                         value={formData.basic_salary}
                         onChange={handleInputChange}
                         min="0"
+                        max="50000"
                         step="0.01"
                         required
                     />
                 </div>
 
+                {/* OVERTIME */}
                 <div className="form-group">
-                    <label htmlFor="over_time">Over Time</label>
+                    <label htmlFor="over_time">Over Time Salary (0 - 50000)</label>
                     <input
                         type="number"
                         id="over_time"
@@ -131,13 +160,15 @@ export default function SallaryUpdate(){
                         value={formData.over_time}
                         onChange={handleInputChange}
                         min="0"
+                        max="50000"
                         step="0.01"
                         required
                     />
                 </div>
 
+                {/* FUEL */}
                 <div className="form-group">
-                    <label htmlFor="fuel_allowence">Fuel Allowance</label>
+                    <label htmlFor="fuel_allowence">Fuel Allowance (0 - 20000)</label>
                     <input
                         type="number"
                         id="fuel_allowence"
@@ -145,6 +176,7 @@ export default function SallaryUpdate(){
                         value={formData.fuel_allowence}
                         onChange={handleInputChange}
                         min="0"
+                        max="20000"
                         step="0.01"
                         required
                     />
@@ -168,5 +200,5 @@ export default function SallaryUpdate(){
                 </button>
             </form>
         </div>
-    )
+    );
 }

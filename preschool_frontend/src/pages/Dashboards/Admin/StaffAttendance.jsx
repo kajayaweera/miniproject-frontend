@@ -13,9 +13,14 @@ const StaffAttendance = () => {
   );
 
   const [attendanceData, setAttendanceData] = useState([
-    { id: 1, name: "Ms. Kavindi Perera", status: "Present" },
-    { id: 2, name: "Mr. Nimal Silva", status: "Absent" },
-    { id: 3, name: "Ms. Ruwani Fernando", status: "Present" },
+    { id: 1, name: "Mr. Hasara Wijesinghe", status: "Present" },
+    { id: 2, name: "Mr. Bob Fernando", status: "Absent" },
+    { id: 3, name: "Ms. Roshi Perera", status: "Present" },
+    { id: 4, name: "Ms. Kushi Silva", status: "Present" },
+    { id: 5, name: "Mr. Madura Rajapaksa", status: "Present" },
+    { id: 6, name: "Mr. Chathura Mendis", status: "Present" },
+    { id: 7, name: "Ms. Thamara Perera", status: "Present" },
+    { id: 8, name: "Ms. Kanthi Dissanayake", status: "Present" },
   ]);
 
   const handleAttendanceChange = (id, newStatus) => {

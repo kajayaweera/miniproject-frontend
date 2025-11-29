@@ -33,9 +33,16 @@ import Checkout from './pages/Dashboards/Parent/Checkout';
 import PaymentsView from './pages/Dashboards/Admin/PaymentsView';
 import SallaryUpdate from './pages/Dashboards/Admin/SallaryUpdate';
 import Salary from './pages/Dashboards/Staff/Salary';
+import { useContext } from 'react';
+import { AppContext } from './Context/AppProvider';
 
 
 function App() {
+
+  const  {user , token} = useContext(AppContext);
+
+  
+
   return (
     <CartProvider>  
       <Router>
@@ -47,10 +54,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cources' element={<Cources />} />
-          <Route path='/parent/dashboard' element={<Parentdashboard />} />
-          <Route path='/staff/dashboard' element={<Staffdashboard />} />
+          <Route path='/parent/dashboard'element={user?.role === 'parent' ? <Parentdashboard /> : <Login />} />
+          <Route path='/staff/dashboard' element={user?.role === 'teacher' ? <Staffdashboard /> : <Login />} />
           <Route path='/staff/salary' element={<Salary />} />
-          <Route path='/admin/dashboard' element={<Admindashboard />} />
+          <Route path='/admin/dashboard' element={user?.role === 'admin' ? <Admindashboard /> : <Login />} />
           <Route path='/parent/timetable' element={<Timetable />} /> 
           <Route path='/parent/bedtimestory' element={<Bedtimestory />} />
           <Route path='/parent/billing' element={<Billing />} />

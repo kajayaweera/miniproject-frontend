@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../../css/staffdash.css';
 import Timetable from "../Parent/Timetable"; 
-import Digitalreport from '../Parent/Digitalreport';
+
 import Profilestaff from './Profilestaff';
 import Updates from "../Parent/Updates"; 
 import Notices from '../Parent/Notices';
@@ -17,7 +17,7 @@ function Staffdashboard() {
         { name: 'Home', icon: '🏠' },
         { name: 'Staff Profile', icon: '👤' },
         { name: 'Timetable', icon: '📅' },
-        { name: 'Digital Reports', icon: '📊' },
+        
         { name: 'update profiles', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
         { name: 'my salary', icon: '💸' },
@@ -76,7 +76,7 @@ function Staffdashboard() {
                             </div>
                             <div className="card pink-card">
                                 <h3>🎉 Upcoming Event</h3>
-                                <p>Sports Day – Sept 15</p>
+                                <p>Christmas Celebration – December 25</p>
                             </div>
                             <div className="card white-card">
                                 <h3>🔔 Notifications</h3>
@@ -87,7 +87,7 @@ function Staffdashboard() {
                 )}
 
                 {activeTab === "Timetable" && <Timetable />}
-                {activeTab === "Digital Reports" && <Digitalreport />}
+                
                 {activeTab === "Staff Profile" && <Profilestaff />}
                 {activeTab === "Updates" && <Updates />}
                 {activeTab === "Special Notices" && <Notices />}
@@ -96,7 +96,7 @@ function Staffdashboard() {
                 {activeTab === "update profiles" && <UpdateChildrend />}
                 {activeTab === "my salary" && <Salary />}
 
-                {activeTab !== 'Home' && activeTab !== 'Timetable' && activeTab !== 'Digital Reports' && activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" &&(
+                {activeTab !== 'Home' && activeTab !== 'Timetable' &&  activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" && activeTab !== "my salary" &&(
                     <div className="content-body">
                         <h2 className="content-title">{activeTab}</h2>
                         <p className="content-text">

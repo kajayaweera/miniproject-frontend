@@ -32,16 +32,6 @@ export default function PaymentsView(){
         }
     };
 
-    const getStatusClass = (status) => {
-        const statusClasses = {
-            completed: 'status-completed',
-            pending: 'status-pending',
-            failed: 'status-failed',
-            refunded: 'status-refunded'
-        };
-        return statusClasses[status] || '';
-    };
-
     if (loading) {
         return <div className="payments-loading">Loading payments...</div>;
     }
@@ -61,7 +51,6 @@ export default function PaymentsView(){
                             <th>User Name</th>
                             <th>Courses</th>
                             <th>Total Amount</th>
-                            <th>Status</th>
                             <th>Date</th>
                         </tr>
                     </thead>
@@ -76,17 +65,12 @@ export default function PaymentsView(){
                                             {parseCourses(payment.courses).map((course, index) => (
                                                 <div key={index} className="course-item">
                                                     <span className="course-name">{course.course_name}</span>
-                                                    <span className="course-amount">${parseFloat(course.amount).toFixed(2)}</span>
+                                                    <span className="course-amount">Rs.{parseFloat(course.amount).toFixed(2)}</span>
                                                 </div>
                                             ))}
                                         </div>
                                     </td>
-                                    <td className="total-amount">${parseFloat(payment.total_amount).toFixed(2)}</td>
-                                    <td>
-                                        <span className={`status-badge ${getStatusClass(payment.status)}`}>
-                                            {payment.status.charAt(0).toUpperCase() + payment.status.slice(1)}
-                                        </span>
-                                    </td>
+                                    <td className="total-amount">Rs.{parseFloat(payment.total_amount).toFixed(2)}</td>
                                     <td className="payment-date">
                                         {new Date(payment.created_at).toLocaleDateString()}
                                     </td>

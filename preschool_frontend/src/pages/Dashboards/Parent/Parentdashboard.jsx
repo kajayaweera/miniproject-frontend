@@ -5,7 +5,7 @@ import Bedtimestory from './Bedtimestory';
 import Billing from './Billing';
 import Profilestd from './Profilestd';
 import Digitalreport from './Digitalreport';
-import Updates from './Updates';
+
 import Notices from './Notices';
 import Events from './Events';
 import Gallery from './Gallery';
@@ -18,12 +18,13 @@ function Parentdashboard() {
 
     const menuItems = [
         { name: 'Home', icon: '🏠' },
-        { name: 'Child Profile', icon: '👤' },
         { name: 'Update Child Profile', icon: '👤' },
+        { name: 'Child Profile', icon: '👤' },
+        
         { name: 'Timetable', icon: '📅' },
         { name: 'Bedtime Story', icon: '🛌' },
         { name: 'Digital Reports', icon: '📊' },
-        { name: 'Updates', icon: '🔔' },
+       
         { name: 'Special Notices', icon: '📝' },
         { name: 'Billing', icon: '💳' },
         { name: 'See My Child', icon: '👶' },
@@ -101,7 +102,7 @@ function Parentdashboard() {
                 {activeTab === "Billing" && <Billing />}
                 {activeTab === "Child Profile" && <Profilestd />}
                 {activeTab === "Digital Reports" && <Digitalreport />}
-                {activeTab === "Updates" && <Updates />}
+                
                 {activeTab === "Special Notices" && <Notices />}
                 {activeTab === "Events" && <Events />}
                 {activeTab === "Gallery" && <Gallery />}
@@ -109,7 +110,7 @@ function Parentdashboard() {
                 {activeTab === "Update Child Profile" && <ChildProfile />}
                 
 
-{activeTab !== "Home" && activeTab !== "Timetable" &&  activeTab !== "Bedtime Story" && activeTab !== "Billing" && activeTab !== "Child Profile" && activeTab !== "Update Child Profile" && activeTab !== "Digital Reports" && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== "See My Child" &&(
+{activeTab !== "Home" && activeTab !== "Timetable" &&  activeTab !== "Bedtime Story" && activeTab !== "Billing" && activeTab !== "Child Profile" && activeTab !== "Update Child Profile" && activeTab !== "Digital Reports"  && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "Gallery" && activeTab !== "See My Child" &&(
     <div className="content-body">
         <h2 className="content-title">{activeTab}</h2>
         <p className="content-text">

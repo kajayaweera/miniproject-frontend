@@ -71,22 +71,22 @@ export default function Salary(){
                             
                             <div className="salary-item-unique">
                                 <span className="salary-label-unique">Basic Salary:</span>
-                                <span className="salary-value-unique">Rs{parseFloat(salary.basic_salary).toFixed(2)}</span>
+                                <span className="salary-value-unique">Rs.{parseFloat(salary.basic_salary).toFixed(2)}</span>
                             </div>
                             
                             <div className="salary-item-unique">
-                                <span className="salary-label-unique">Overtime:</span>
-                                <span className="salary-value-unique">Rs{parseFloat(salary.over_time).toFixed(2)}</span>
+                                <span className="salary-label-unique">Overtime Salary:</span>
+                                <span className="salary-value-unique">Rs.{parseFloat(salary.over_time).toFixed(2)}</span>
                             </div>
                             
                             <div className="salary-item-unique">
                                 <span className="salary-label-unique">Fuel Allowance:</span>
-                                <span className="salary-value-unique">Rs{parseFloat(salary.fuel_allowence).toFixed(2)}</span>
+                                <span className="salary-value-unique">Rs.{parseFloat(salary.fuel_allowence).toFixed(2)}</span>
                             </div>
                             
                             <div className="salary-item-unique salary-total-unique">
                                 <span className="salary-label-unique">Net Salary:</span>
-                                <span className="salary-value-unique">Rs{parseFloat(salary.net_sallary).toFixed(2)}</span>
+                                <span className="salary-value-unique">Rs.{parseFloat(salary.net_sallary).toFixed(2)}</span>
                             </div>
                         </div>
                         

@@ -96,6 +96,25 @@ function Nav() {
             {user ? (
               <li className="nav-item auth-item">
                 <div className="user-menu">
+
+                  {user.role === 'parent' && (
+                    <Link to="parent/dashboard" className="nav-link">
+                      Dashboard
+                    </Link>
+                  )}
+
+                  {user.role === 'teacher' && (
+                    <Link to="staff/dashboard" className="nav-link">
+                      Dashboard
+                    </Link>
+                  )}
+
+                  {user.role === 'admin' && (
+                    <Link to="admin/dashboard" className="nav-link">
+                      Dashboard
+                    </Link>
+                  )}
+                  
                   <span className="user-greeting">
                     Welcome, {user.name || 'User'}
                   </span>

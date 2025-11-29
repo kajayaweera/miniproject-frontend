@@ -5,17 +5,17 @@ import React, { useState } from "react";
 const Profilestaff = () => {
   const [editing, setEditing] = useState(false);
   const [staffData, setStaffData] = useState({
-    name: "Ms. Kavindi Perera",
+    name: "Mr. Chatura Mendis",
     role: "Preschool Teacher",
-    email: "kavindi@sunshinepreschool.com",
+    email: "chatura@gmail.com",
     phone: "+94 77 123 4567",
     address: "Colombo, Sri Lanka",
-    qualification: "Diploma in Early Childhood Education",
+    qualification: "B.Sc in Mathematics",
     experience: "5 years",
     about:
       "Passionate preschool teacher focused on nurturing creativity, kindness, and confidence in children through playful learning.",
     skills: ["Child Care", "Storytelling", "Art & Craft", "Teamwork"],
-    profilePic: "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
+    profilePic: "http://127.0.0.1:8000/images/chatura.jpg",
   });
 
   const [newImage, setNewImage] = useState(null);
@@ -49,6 +49,11 @@ const Profilestaff = () => {
             src={newImage || staffData.profilePic}
             alt="Profile"
             className="profile-image"
+            onError={(e) => {
+              console.error("Profile image failed to load:", e?.target?.src);
+              e.target.onerror = null;
+              e.target.src = "/images/placeholder-profile.png"; // place placeholder in React public/images
+            }}
           />
           {editing && (
             <div className="upload-overlay">
