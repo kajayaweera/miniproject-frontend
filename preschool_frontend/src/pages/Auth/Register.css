@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   min-height: 90vh;
-  background: linear-gradient(135deg, #ff76dd, #e185bd);
+  background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 50%, #fce7f3 100%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -14,7 +14,7 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #333;
+  color: #ec4899;
   text-align: center;
 }
 
@@ -60,7 +60,7 @@
 
 /* Button */
 .register-btn {
-  background: #721052;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
   color: white;
   border: none;
   padding: 12px;

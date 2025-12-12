@@ -99,7 +99,7 @@ function Staffdashboard() {
                 {activeTab === "my salary" && <Salary />}
                 {activeTab === "Children Attenance" && <ChildrenAttendance />}
 
-                {activeTab !== 'Home' && activeTab !== 'Timetable' &&  activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" && activeTab !== "my salary" &&(
+                {activeTab !== 'Home' && activeTab !== 'Timetable' &&  activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" && activeTab !== "my salary" && activeTab !== "Children Attenance" &&(
                     <div className="content-body">
                         <h2 className="content-title">{activeTab}</h2>
                         <p className="content-text">

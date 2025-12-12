@@ -55,7 +55,7 @@ export default function Register() {
 
   return (
     <div className="register-container">
-      <h1 className="register-title">Create Your Account</h1>
+      <h1 className="register-title">®️ Create Your Account</h1>
 
       <form className="register-form" onSubmit={handleRegister}>
         <div className="form-group">

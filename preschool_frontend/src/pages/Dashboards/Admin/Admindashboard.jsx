@@ -25,7 +25,7 @@ function Admindashboard() {
         { name: 'Common Notices', icon: '📝' },
         { name: 'Feedbacks', icon: '✉️' },
         { name: 'received payments', icon: '💳' },
-        { name: 'Staff Salaries', icon: '💳' },
+        { name: 'Staff Salaries', icon: '💸' },
         { name: 'See My Child', icon: '👶' },
         { name: 'Events', icon: '🎉' },
         { name: 'Gallery', icon: '📸' },

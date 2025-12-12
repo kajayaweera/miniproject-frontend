@@ -5,8 +5,8 @@ import React, { useContext, useState } from "react";
 
 const images = [
   "http://127.0.0.1:8000/images/chatura.jpg",
-  "http://127.0.0.1:8000/images/kushalika.jpg",
-  "http://127.0.0.1:8000/images/sandeepani.jpg"
+  // "http://127.0.0.1:8000/images/kushalika.jpg",
+  // "http://127.0.0.1:8000/images/sandeepani.jpg"
 ];
 
 const Profilestaff = () => {

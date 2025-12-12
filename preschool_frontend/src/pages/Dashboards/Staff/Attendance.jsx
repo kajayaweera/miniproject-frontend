@@ -44,7 +44,7 @@ export default function ChildrenAttendance(){
     
     return (
         <div className="att-main-container">
-            <h1 className="att-page-title">Children Attendance</h1>
+            <h1 className="att-page-title">🙋Children Attendance🙋‍♀️</h1>
             
             {message && (
                 <div className="att-message-box">

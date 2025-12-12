@@ -12,7 +12,7 @@ function Feedback() {
 
   return (
     <div className="feedback-page">
-      <h2 className="feedback-title">User Feedback</h2>
+      <h2 className="feedback-title">✍️User Feedback</h2>
 
       {feedbackList.length === 0 ? (
         <p className="no-feedback">No feedback available</p>

@@ -23,7 +23,7 @@ const Digitalreport = () => {
     attendance: {
       title: "Attendance Progress",
       labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-      data: [95, 100, 90, 98],
+      data: [80, 100, 60, 100],
       color: "rgba(75, 192, 192, 0.7)",
       summary:
         "Your child has excellent attendance this month. Consistent presence helps with learning continuity and social development.",

@@ -109,19 +109,7 @@ export default function UpdateChildrend() {
             {editingChild === child.id ? (
               <div className="update-children-edit-form">
                 
-                <div className="update-children-form-group">
-                  <label>Attendance</label>
-                  <select
-                    name="attendance"
-                    value={formData.attendance}
-                    onChange={handleInputChange}
-                    className="update-children-input-field"
-                  >
-                    <option value="present">🙋🙋‍♀️Present</option>
-                    <option value="absent">🙇🙇‍♀️ Absent</option>
-                   
-                  </select>
-                </div>
+                
 
 
 
