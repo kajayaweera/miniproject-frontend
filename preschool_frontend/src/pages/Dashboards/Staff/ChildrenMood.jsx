@@ -338,7 +338,7 @@ export default function ChildrenMood() {
                     {moodRecords.length === 0 ? (
                         <p style={{ textAlign: 'center' }}>No mood records found</p>
                     ) : (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr',  gap: '20px' }}>
                             {moodRecords.map((record) => (
                                 <div 
                                     key={record.id} 
@@ -431,7 +431,7 @@ export default function ChildrenMood() {
                 <>
                     <div style={{ 
                         display: 'grid', 
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                        gridTemplateColumns: '1fr 1fr',
                         gap: '20px',
                         marginBottom: '30px'
                     }}>
@@ -439,7 +439,7 @@ export default function ChildrenMood() {
                             <div 
                                 key={child.id} 
                                 style={{
-                                    backgroundColor: '#ffffff',
+                                    backgroundColor: '#ffffffff',
                                     padding: '20px',
                                     borderRadius: '12px',
                                     boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
