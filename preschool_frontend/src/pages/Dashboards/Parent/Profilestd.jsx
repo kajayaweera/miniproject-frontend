@@ -7,6 +7,7 @@ function ChildProfile() {
   const {user, token} = useContext(AppContext);
   const [childprofile, setChildProfile] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [todayMood, setTodayMood] = useState('happy');
 
   async function getChild(){
     try {
@@ -20,8 +21,27 @@ function ChildProfile() {
     }
   }
 
+  async function getTodayMood(){
+    try {
+      const res = await axios.get(`/api/mood/today/${user.id}`);
+      console.log("Mood API Response:", res.data);
+      if (res.data.success && res.data.data.mood) {
+        console.log("Setting mood to:", res.data.data.mood);
+        setTodayMood(res.data.data.mood);
+      } else {
+        console.log("No mood data found, defaulting to happy");
+        setTodayMood('happy');
+      }
+    } catch (error) {
+      console.log("Error fetching mood:", error);
+      console.log("Defaulting to happy");
+      setTodayMood('happy');
+    }
+  }
+
   useEffect(()=>{
     getChild();
+    getTodayMood();
   },[]);
 
   if (loading) {
@@ -42,7 +62,7 @@ function ChildProfile() {
               alt={childprofile.name}
               className="profile-pic"
             />
-            <div className="mood-badge">{childprofile.mood || 'happy'}</div>
+            <div className="mood-badge">{todayMood}</div>
           </div>
           <h1 className="profile-name">{childprofile.name}</h1>
           <p className="profile-age">{childprofile.age} years old</p>
@@ -70,8 +90,10 @@ function ChildProfile() {
 
           <div className="info-card">
             <div className="card-icon">😊</div>
-            <h3>Current Mood</h3>
-            <p className="mood-text">{childprofile.mood || 'happy'}</p>
+            <h3>Today's Mood</h3>
+            <p className="mood-text" style={{ textTransform: 'capitalize', fontSize: '1.2em', fontWeight: 'bold' }}>
+              {todayMood}
+            </p>
           </div>
         </div>
       </div>

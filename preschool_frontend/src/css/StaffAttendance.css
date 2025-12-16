@@ -1,118 +1,449 @@
-.attendance-container {
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
-  padding: 30px;
-  font-family: "Poppins", sans-serif;
+.sa-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  min-height: 100vh;
 }
 
-.attendance-container h2 {
-  text-align: center;
-  color: #d63384;
-  margin-bottom: 20px;
-}
-
-.attendance-date {
+.sa-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.attendance-date label {
-  color: #d63384;
-  font-weight: 600;
-}
-
-.attendance-date input {
-  border: 1px solid #ffd6e2;
-  border-radius: 8px;
-  padding: 6px 10px;
-  background: #fff5f7;
-  color: #d63384;
-}
-
-.attendance-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 25px;
-}
-
-.attendance-table th {
-  background-color: #ffb6c1;
-  color: white;
-  text-align: left;
-  padding: 12px;
-  font-weight: 600;
-}
-
-.attendance-table td {
-  border-bottom: 1px solid #ffe0eb;
-  padding: 12px;
+.sa-header h1 {
   color: #333;
+  font-size: 2rem;
+  margin: 0;
 }
 
-.attendance-table tr:hover {
-  background-color: #fff0f5;
-}
-
-.status-select {
-  border: 1px solid #ffd6e2;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-family: inherit;
-  color: #d63384;
-  background-color: #fff5f7;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.status-select.present {
-  background-color: #ffe4ec;
-}
-
-.status-select.absent {
-  background-color: #ffd1dc;
-}
-
-.status-select:focus {
-  outline: none;
-  border-color: #ff69b4;
-}
-
-.summary-box {
+.sa-view-toggle {
   display: flex;
-  justify-content: space-around;
-  background: #fff5f7;
-  border: 1px solid #ffd6e2;
-  border-radius: 12px;
-  padding: 15px;
-  color: #d63384;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.sa-view-toggle button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
   font-weight: 500;
 }
 
+.sa-view-toggle button.sa-active {
+  background: #4CAF50;
+  color: white;
+}
+
+.sa-view-toggle button:hover:not(.sa-active) {
+  background: #f0f0f0;
+}
+
+/* Alerts */
+.sa-alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.sa-alert-error {
+  background-color: #fee;
+  color: #c33;
+  border: 1px solid #fcc;
+}
+
+.sa-alert-success {
+  background-color: #efe;
+  color: #3c3;
+  border: 1px solid #cfc;
+}
+
+/* Form Section */
+.sa-form-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sa-form .sa-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.sa-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sa-form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.sa-form-group input[type="date"] {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+.sa-bulk-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Teachers List */
+.sa-teachers-list {
+  margin-bottom: 2rem;
+}
+
+.sa-list-header {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.sa-teacher-item {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sa-teacher-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: #4CAF50;
+}
+
+.sa-teacher-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sa-teacher-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.sa-teacher-email {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.sa-status-controls {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.sa-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.sa-radio-label:hover {
+  background: #f8f9fa;
+}
+
+.sa-radio-label input[type="radio"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.sa-status-present {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.sa-status-absent {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Buttons */
+.sa-btn-primary,
+.sa-btn-secondary,
+.sa-btn-edit,
+.sa-btn-delete {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.sa-btn-primary {
+  background: #4CAF50;
+  color: white;
+  min-width: 200px;
+}
+
+.sa-btn-primary:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.sa-btn-primary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.sa-btn-secondary {
+  background: #2196F3;
+  color: white;
+}
+
+.sa-btn-secondary:hover {
+  background: #0b7dda;
+}
+
+.sa-btn-edit {
+  background: #FF9800;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+}
+
+.sa-btn-edit:hover {
+  background: #e68900;
+}
+
+.sa-btn-delete {
+  background: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+}
+
+.sa-btn-delete:hover {
+  background: #da190b;
+  transform: none;
+}
+
+.sa-form-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+/* History Section */
+.sa-history-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sa-history-section h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.sa-no-records {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.sa-history-table {
+  overflow-x: auto;
+}
+
+.sa-history-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sa-history-table thead {
+  background: #4CAF50;
+  color: white;
+}
+
+.sa-history-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.sa-history-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sa-history-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.sa-present-count {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.sa-absent-count {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.sa-action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .attendance-container {
-    padding: 20px;
+  .sa-container {
+    padding: 1rem;
   }
 
-  .attendance-date {
+  .sa-header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .attendance-table th,
-  .attendance-table td {
-    font-size: 0.9rem;
-    padding: 10px;
+  .sa-header h1 {
+    font-size: 1.5rem;
   }
 
-  .summary-box {
+  .sa-view-toggle {
+    width: 100%;
+  }
+
+  .sa-view-toggle button {
+    flex: 1;
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .sa-form-section,
+  .sa-history-section {
+    padding: 1rem;
+  }
+
+  .sa-form .sa-form-header {
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .sa-bulk-actions {
+    width: 100%;
+  }
+
+  .sa-bulk-actions button {
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .sa-list-header {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .sa-teacher-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .sa-status-controls {
+    justify-content: flex-start;
+  }
+
+  .sa-form-group input[type="date"] {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .sa-btn-primary {
+    width: 100%;
+  }
+
+  .sa-history-table {
+    font-size: 0.9rem;
+  }
+
+  .sa-history-table th,
+  .sa-history-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .sa-action-buttons {
+    flex-direction: column;
+  }
+
+  .sa-btn-edit,
+  .sa-btn-delete {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sa-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .sa-teacher-name {
+    font-size: 0.95rem;
+  }
+
+  .sa-teacher-email {
+    font-size: 0.85rem;
+  }
+
+  .sa-status-controls {
+    gap: 1rem;
+  }
+
+  .sa-radio-label {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
   }
 }
