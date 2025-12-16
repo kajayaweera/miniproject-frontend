@@ -229,7 +229,7 @@ export default function ChildrenMood() {
 
     return (
         <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-            <h1 style={{ textAlign: 'center', color: '#4A90E2', marginBottom: '10px' }}>
+            <h1 style={{ textAlign: 'center', color: '#da1d8bff', marginBottom: '10px' }}>
                 😊 Children's Mood Tracker 😊
             </h1>
             
@@ -343,7 +343,7 @@ export default function ChildrenMood() {
                                 <div 
                                     key={record.id} 
                                     style={{
-                                        backgroundColor: '#f8f9fa',
+                                        backgroundColor: '#e7a5cfff',
                                         padding: '20px',
                                         borderRadius: '12px',
                                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
@@ -590,7 +590,7 @@ export default function ChildrenMood() {
                                     padding: '15px 40px',
                                     fontSize: '18px',
                                     backgroundColor: Object.values(childMoods).every(mood => mood === '') 
-                                        ? '#ccc' 
+                                        ? '#bf357cff' 
                                         : '#4CAF50',
                                     color: 'white',
                                     border: 'none',
