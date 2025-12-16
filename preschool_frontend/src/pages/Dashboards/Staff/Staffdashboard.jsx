@@ -20,7 +20,7 @@ function Staffdashboard() {
         { name: 'Staff Profile', icon: '👤' },
         { name: 'Timetable', icon: '📅' },
         { name: 'Children Attenance', icon: '👤' },
-        { name: 'Children Moods', icon: '👤' },
+        { name: 'Children Moods', icon: '😊' },
         
         { name: 'update profiles', icon: '🔔' },
         { name: 'Special Notices', icon: '📝' },
@@ -103,7 +103,7 @@ function Staffdashboard() {
                 {activeTab === "Children Attenance" && <ChildrenAttendance />}
                 {activeTab === "Children Moods" && <ChildrenMood />}
 
-                {activeTab !== 'Home' && activeTab !== 'Timetable' &&  activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" && activeTab !== "my salary" && activeTab !== "Children Attenance" &&(
+                {activeTab !== 'Home' && activeTab !== 'Timetable' &&  activeTab !== 'Staff Profile' && activeTab !== 'Staff Attendance' && activeTab !== "Updates" && activeTab !== "Special Notices" && activeTab !== "Events" && activeTab !== "update profiles" && activeTab !== "Gallery" && activeTab !== "my salary" && activeTab !== "Children Attenance" && activeTab !== "Children Moods" &&(
                     <div className="content-body">
                         <h2 className="content-title">{activeTab}</h2>
                         <p className="content-text">
